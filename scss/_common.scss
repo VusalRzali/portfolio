@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@include createMargin(0, 10);
+@include createPadding(0, 10);
+
+.active {
+    color: $main-color !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.button-group {
+    padding-top: 25px;
+    @include flex(flex-start);
+    flex-wrap: wrap;
+    .btn {
+        min-width: 120px;
+    }
+    .btn-primary {
+        margin-right: 15px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 0;
+    width: auto;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    transition: ease-in-out all 0.55s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $main-color;
+    color: #fff;
+    &:hover {
+        background-color: $black;
+        border-color: $black;
+    }
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: $main-color;
+    border: 2px solid $main-color;
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+    }
+}
+
+.section-title {
+    h3 {
+        position: relative;
+        display: inline-block;
+        font-size: 35px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $black;
+        padding: 0 0 12px;
+        margin: 0 0 12px;
+        &::before {
+            content: "";
+            position: absolute;
+            background: $main-color;
+            width: 50px;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    p {
+        color: $text-color;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+}

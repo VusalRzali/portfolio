@@ -1,0 +1,37 @@
+@mixin flex($space) {
+    display: flex;
+    align-items: center;
+    justify-content: $space;
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+// Dynamic Margin Top and Bottom Class
+@mixin createMargin($min, $max) {
+    @for $i from $min to $max + 1 {
+        .m-#{$i} {
+            margin-top: 10px * $i !important;;
+            margin-bottom: 10px * $i !important;;
+        }
+    }
+}
+
+// Dynamic Padding Top and Bottom Class
+@mixin createPadding($min, $max) {
+    @for $i from $min to $max + 1 {
+        .p-#{$i} {
+            padding-top: 10px * $i !important;;
+            padding-bottom: 10px * $i !important;;
+        }
+    }
+}

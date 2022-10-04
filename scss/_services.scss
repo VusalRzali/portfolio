@@ -1,0 +1,72 @@
+#services {
+    background-color: $bg-gray;
+}
+
+.serives__block {
+    @include flex(space-between);
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 50px;
+    .box {
+        width: 30%;
+        padding: 40px 30px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        position: relative;
+        top: 0;
+        transition: ease all 0.35s;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        &:hover {
+            background: $main-color;
+            border-color: $main-color;
+            top: -10px;
+        }
+        &:hover .icon {
+            border-color: #fff;
+            color: #fff;
+        }
+        &:hover h5 {
+            color: #fff;
+        }
+        &:hover p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 50%;
+            border: 2px dotted #d9832e;
+            color: $main-color;
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+        h5 {
+            color: $black;
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0 0 12px;
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}
+
+@include tablet {
+    .serives__block {
+        .box {
+            width: 45%;
+        }
+    }
+}
+
+@include mobile {
+    .serives__block {
+        .box {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.skill__block {
+    @include flex(space-between);
+    margin-top: 50px;
+    .skill {
+        width: 50%;
+        &-item {
+            h6 {
+                color: $black;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.2;
+                margin: 0 0 10px;
+            }
+            .skill-bar {
+                position: relative;
+                background: #eee;
+                &-in {
+                    background-color: $main-color;
+                    width: 0; 
+                    animation: 1s in-out forwards;
+                    height: 5px;
+                    position: relative;
+                }
+                span {
+                    position: absolute;
+                    right: 0;
+                    top: -30px;
+                    font-size: 14px;
+                }
+            }
+        }
+        &-item:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+    .result {
+        @include flex(center);
+        flex-wrap: wrap;
+        width: 40%;
+        gap: 15px;
+        .box {
+            @include flex(flex-start);
+            padding: 18px 15px;
+            border-radius: 5px;
+            margin: 0;
+            width: 45%;
+            background: #ffffff;
+            border: 2px solid $main-color;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); 
+            i {
+                font-size: 30px;
+                line-height: 50px;
+                color: $main-color;
+            }
+            h5 {
+                font-size: 16px;
+                color: $black;
+                line-height: 1.2;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .skill__block {
+        flex-direction: column;
+        .skill {
+            width: 100%;
+        }
+        .result {
+            width: 100%;
+            margin-top: 50px;
+            justify-content: space-between;
+            gap: 25px;
+            .box {
+                width: 48%;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .box {
+        width: 100% !important;
+    }
+}

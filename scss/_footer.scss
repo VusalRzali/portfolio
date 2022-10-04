@@ -1,0 +1,33 @@
+footer {
+    background-color: $black;
+    .footer__block {
+        @include flex(space-between);
+        padding: 25px 0;
+        .social-networks {
+            @include flex(flex-start);
+            > li + li {
+                margin-left: 15px;
+            }
+            a {
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+        p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+        }
+    }
+}
+
+@include mobile {
+    .footer__block {
+        flex-direction: column;
+        p {
+            margin-top: 30px;
+        }
+    }
+}

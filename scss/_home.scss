@@ -1,0 +1,101 @@
+.home__block {
+    @include flex(space-between);
+    height: 100vh;
+    &-text {
+        width: 50%;
+        h6 {
+            color: $black;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin: 0 0 15px;
+        }
+        h1 {
+            color: $black;
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 1;
+            margin: 0 0 15px;
+        }
+        h3 {
+            color: $black;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin: 0 0 15px;
+        }
+        p {
+            color: rgba(9, 10, 12, 0.8);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+    }
+    &-image {
+        width: 45%;
+        img {
+            width: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+#home {
+    position: relative;
+    .go-to {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        width: 35px;
+        margin: auto;
+        z-index: 1;
+        text-align: center;
+        a {
+            @include flex(center);
+            width: 35px;
+            height: 35px;
+            background: $main-color;
+            color: #fff;
+            border-radius: 50%;
+            animation: updown 1s infinite  alternate;
+        }
+    }
+}
+
+@include tablet {
+    .home__block-text {
+        h6 {
+            font-size: 15px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+    }
+}
+
+@include mobile {
+    .home__block {
+        flex-direction: column;
+        height: auto;
+        &-text {
+            width: 100%;
+            padding: 25px;
+            h6 {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 35px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+        }
+        &-image {
+            width: 100%;
+        }
+    }
+}

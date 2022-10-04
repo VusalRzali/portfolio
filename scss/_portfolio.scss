@@ -1,0 +1,76 @@
+.portfolio__block {
+    @include flex(space-between);
+    flex-wrap: wrap;
+    margin: 50px -10px 0;
+    &-item {
+        width: calc(100% / 3);
+        padding: 10px;
+        .box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer;
+            .image img {
+                width: 100%;
+                vertical-align: middle;
+                transform: scale(1);
+                transition: ease all 0.35s;
+            }
+            .text {
+                @include flex(center);
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(9, 10, 12, 0.5);
+                transition: ease all 0.35s;
+                opacity: 0;
+                h5 {
+                    position: relative;
+                    left: -25px;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: 600;
+                    display: inline-block;
+                    margin: 0 0 10px;
+                    transition: ease all 0.35s;
+                }
+                span {
+                    position: relative;
+                    left: -25px;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-weight: 500;
+                    padding: 2px 12px;
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 14px;
+                    transition: ease all 0.35s;
+                }
+            }
+            &:hover img {
+                transform: scale(1.1);
+            }
+            &:hover .text {
+                opacity: 1;
+            }
+            &:hover .text h5, 
+            &:hover .text span {
+                left: 0;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .portfolio__block-item {
+        width: calc(100% / 2);
+    }
+}
+
+@include mobile {
+    .portfolio__block-item {
+        width: 100%;
+    }
+}

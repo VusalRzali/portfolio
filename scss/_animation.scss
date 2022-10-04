@@ -1,0 +1,22 @@
+@keyframes updown {
+    0% {
+        top: 5px;
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    100% {
+        top: 25px;
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes in-out {
+    0% {
+      width: 0;
+    }
+    100% {
+        width: var(--prog);
+    }
+}
